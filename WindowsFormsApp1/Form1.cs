@@ -84,9 +84,9 @@ namespace WindowsFormsApp1
 
         private void DownMoveTimer_Tick(object sender, EventArgs e)
         {
-            if (Player.Right < 400)
+            if (Player.Top < 400)
             {
-                Player.Left += playerSpeed;
+                Player.Top += playerSpeed;
             }
         }
 
@@ -100,7 +100,30 @@ namespace WindowsFormsApp1
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if(e.KeyCode == Keys.Right)
+            {
+                RightMoveTimer.Start();
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                LeftMoveTimer.Start();
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                DownMoveTimer.Start();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                UpMoveTimer.Start();
+            }
+        }
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            RightMoveTimer.Stop();
+            LeftMoveTimer.Stop();
+            DownMoveTimer.Stop();
+            UpMoveTimer.Stop();
         }
     }
 }
