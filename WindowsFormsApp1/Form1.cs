@@ -15,6 +15,10 @@ namespace WindowsFormsApp1
         PictureBox[] stars;
         int backgroundspeed;
         int playerSpeed;
+
+        PictureBox[] munitions;
+        int MunitionSpeed;
+
         Random rnd;
         public Form1()
         {
@@ -27,6 +31,12 @@ namespace WindowsFormsApp1
             playerSpeed = 4;
             stars = new PictureBox[15];
             rnd = new Random();
+            MunitionSpeed = 20;
+            munitions = new PictureBox[3];
+
+            Image munition = Image.FromFile(@"");
+
+        //    for(i = 0; i < munition.Length; i++)
 
             for (int i = 0; i < stars.Length; i++)
             {
